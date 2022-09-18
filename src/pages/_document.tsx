@@ -5,7 +5,7 @@ import Document, {
   NextScript,
   DocumentContext
 } from 'next/document'
-import { CssBaseline } from '@bolio-ui/core' // import { CssBaseline } from '@geist-ui/core'
+import { CssBaseline } from '@bolio-ui/core'
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -25,7 +25,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="pt-BR">
+      <Html lang="en">
         <Head />
         <body>
           <script
@@ -33,12 +33,12 @@ export default class MyDocument extends Document {
               __html: `
               (function(){
                 if (!window.localStorage) return;
-                if (window.localStorage.getItem('theme') === 'dark') {
-                  document.documentElement.style.background = '#000';
-                  document.body.style.background = '#000';
-                } else {
+                if (window.localStorage.getItem('theme') === 'light') {
                   document.documentElement.style.background = '#fff';
                   document.body.style.background = '#fff';
+                } else {
+                  document.documentElement.style.background = '#000';
+                  document.body.style.background = '#000';
                 }
               })()`
             }}
