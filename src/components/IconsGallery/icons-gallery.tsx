@@ -47,6 +47,7 @@ const IconsGallery: React.FC<unknown> = () => {
             marginBottom={2}
             height={1.5}
             font={1}
+            type="secondary"
             {...bindings}
           />
         </Grid>
