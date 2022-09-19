@@ -119,7 +119,7 @@ const Navigation: React.FC = () => {
                         type="abort"
                         onClick={() =>
                           settings.switchTheme(
-                            theme.type === 'light' ? 'dark' : 'light'
+                            theme.type === 'light' ? 'purple' : 'light'
                           )
                         }
                       >
