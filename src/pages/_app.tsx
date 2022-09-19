@@ -8,6 +8,8 @@ import Favicon from 'src/components/Favicon'
 import Navigation from 'src/components/Navigation'
 import SEO from '../../next-seo.config'
 
+import { purpleTheme } from 'src/theme'
+
 function App({ Component, pageProps }: AppProps) {
   const [themeType, setThemeType] = useState<ThemeType>('light')
 
@@ -37,7 +39,7 @@ function App({ Component, pageProps }: AppProps) {
         />
         <Favicon />
       </Head>
-      <BolioUIProvider themeType={themeType}>
+      <BolioUIProvider themes={[purpleTheme]} themeType={themeType}>
         <SettingsContext.Provider value={{ themeType, switchTheme }}>
           <DefaultSeo {...SEO} />
           <CssBaseline />

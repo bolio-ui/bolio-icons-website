@@ -32,7 +32,7 @@ function Hero({ content }: Props) {
         </Grid.Container>
         <Grid.Container gap={2} justify="center" alignItems="center">
           <Grid xs={12} sm={6} md={2}>
-            <Button type="error" width="100%">
+            <Button type="info" width="100%">
               <Link
                 href="https://bolio-ui.com/docs/guide/getting-started"
                 target="_blank"
