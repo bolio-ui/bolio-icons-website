@@ -43,7 +43,7 @@ function Hero({ content }: Props) {
           </Grid>
           <Grid xs={12} sm={6} md={3}>
             <Button type="secondary" width="100%">
-              <Link href="" target="_blank">
+              <Link href="/download/bolio-ui-icons.zip" target="_blank">
                 Download Pack
               </Link>
             </Button>
