@@ -14,7 +14,13 @@ import IconsCell, { getImportString } from './icons-cell'
 const ImportSnippet: React.FC<React.PropsWithChildren<unknown>> = ({
   children
 }) => {
-  return <Snippet>{children}</Snippet>
+  return (
+    <Snippet
+      toastText="Code copied!"
+      toastType="default"
+      text={children.toString()}
+    />
+  )
 }
 
 const IconsGallery: React.FC<unknown> = () => {
@@ -62,8 +68,8 @@ const IconsGallery: React.FC<unknown> = () => {
           />
         ))}
       </Grid.Container>
-      <Modal {...modalBindings}>
-        <Modal.Title>{importStr.title}</Modal.Title>
+      <Modal width="30rem" {...modalBindings}>
+        <Modal.Title style={{ fontWeight: 600 }}>{importStr.title}</Modal.Title>
         <Modal.Content>
           <p>{'Import:'}</p>
           <ImportSnippet>{importStr.normal}</ImportSnippet>
