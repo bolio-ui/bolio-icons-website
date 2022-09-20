@@ -54,4 +54,4 @@ Whether it's a feature request, bug report, or a project to showcase, please get
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit) © [brunnoandrade](https://github.com/brunnoandrade)
+[MIT](https://choosealicense.com/licenses/mit/) © [brunnoandrade](https://github.com/brunnoandrade/)
