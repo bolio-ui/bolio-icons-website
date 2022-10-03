@@ -40,7 +40,7 @@ function CardBox({ title, description, icon, hover = false }: Props) {
       </div>
       <style jsx>{`
         .card-wrapper :global(.card-box):hover {
-          box-shadow: ${theme.type === 'dark'
+          box-shadow: ${theme.type === 'purple'
             ? `0 0 0 1px ${theme.palette.foreground}`
             : '0px 4px 8px rgba(0,0,0,0.12)'};
         }

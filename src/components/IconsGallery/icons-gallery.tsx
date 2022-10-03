@@ -49,11 +49,10 @@ const IconsGallery: React.FC<unknown> = () => {
           <Input
             width="100%"
             icon={<Icons.Search />}
-            placeholder={'Search icon...'}
+            placeholder="Search icon..."
             marginBottom={2}
             height={1.5}
-            font={1}
-            type="secondary"
+            backgroundColor="rgba(194, 95, 255, 0.2) none repeat scroll 0% 0%"
             {...bindings}
           />
         </Grid>

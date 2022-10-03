@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Grid, Row, useTheme } from '@bolio-ui/core'
+import { Card, Grid, Row, Text, useTheme } from '@bolio-ui/core'
 
 export const getFileName = (name: string): string => {
   return name.replace(/^(.)/, (g) => g.toLowerCase())
@@ -32,17 +32,23 @@ const IconsCell: React.FC<Props> = ({
       <Card
         key={name}
         onClick={() => onClick(name)}
-        height="7"
-        width="100%"
-        shadow
-        style={{ margin: 15, cursor: 'pointer' }}
+        h="110px"
+        w="100%"
+        style={{
+          margin: 15,
+          cursor: 'pointer',
+          backgroundColor: theme.type === 'purple' ? '#331d4f' : '#f3dfff'
+        }}
       >
         <Row
-          justify="center"
+          justify="space-around"
           style={{ textAlign: 'center', fontSize: 28, marginTop: 24 }}
         >
           <Component />
         </Row>
+        <Card.Content style={{ textAlign: 'center' }}>
+          <Text b>{name}</Text>
+        </Card.Content>
       </Card>
       <style jsx>{`
         .card-wrapper {
@@ -50,11 +56,6 @@ const IconsCell: React.FC<Props> = ({
           cursor: pointer;
           margin: 15px;
           text-align: center;
-        }
-        .card-wrapper :global(.card-box):hover {
-          box-shadow: ${theme.type === 'dark'
-            ? `0 0 0 1px ${theme.palette.foreground}`
-            : '0px 4px 8px rgba(0,0,0,0.12)'};
         }
       `}</style>
     </Grid>
