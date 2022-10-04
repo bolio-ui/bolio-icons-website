@@ -32,7 +32,7 @@ const IconsCell: React.FC<Props> = ({
       <Card
         key={name}
         onClick={() => onClick(name)}
-        h="110px"
+        h="115px"
         w="100%"
         style={{
           margin: 15,
