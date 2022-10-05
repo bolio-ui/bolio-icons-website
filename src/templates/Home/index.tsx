@@ -11,7 +11,7 @@ function Home() {
         content={{
           title: 'Bolio Icons',
           description:
-            'Collection of simply beautiful icons. Each icon is designed with an emphasis on simplicity, consistency and readability.'
+            'Collection of simply beautiful icons. Each icon is designed with an emphasis on simplicity, consistency and readability. 🥷🏼'
         }}
       />
       <Section pb={4}>

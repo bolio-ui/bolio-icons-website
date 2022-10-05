@@ -45,117 +45,121 @@ const Navigation: React.FC = () => {
   return (
     <>
       <nav className="menu_wrapper">
-        <div className={`${sticky ? 'menu_sticky' : 'menu'}`}>
-          <Container>
-            <Grid.Container gap={1} justify="center">
-              <>
-                <Grid
-                  xs={6}
-                  md={6}
-                  justify="flex-start"
-                  style={{ marginTop: '8px' }}
-                >
-                  <Logo name="Bolio Icons" />
-                </Grid>
+        <Container fluid>
+          <div className={`${sticky ? 'menu_sticky' : 'menu'}`}>
+            <Container fluid>
+              <Grid.Container gap={1} justify="center">
+                <>
+                  <Grid
+                    xs={6}
+                    md={6}
+                    justify="flex-start"
+                    style={{ marginTop: '8px' }}
+                  >
+                    <Logo name="Bolio Icons" />
+                  </Grid>
 
-                <Grid xs={6} md={6} justify="flex-end">
-                  <div className="controls">
-                    <>
-                      <Link
-                        href="https://github.com/bolio-ui/bolio-ui"
-                        target="_blank"
-                      >
+                  <Grid xs={6} md={6} justify="flex-end">
+                    <div className="controls">
+                      <>
+                        <Link
+                          href="https://github.com/bolio-ui/bolio-ui"
+                          target="_blank"
+                        >
+                          <Button
+                            w="28px"
+                            h="28px"
+                            py={0}
+                            px={0}
+                            className="theme-button"
+                            aria-label="Github Bolio UI"
+                            type="abort"
+                          >
+                            <Github fontSize={16} />
+                          </Button>
+                        </Link>
+                        <Link
+                          href="https://www.twitter.com/bolio_ui/"
+                          target="_blank"
+                        >
+                          <Button
+                            w="28px"
+                            h="28px"
+                            py={0}
+                            px={0}
+                            className="theme-button"
+                            aria-label="Twitter Bolio UI"
+                            type="abort"
+                          >
+                            <Twitter fontSize={16} />
+                          </Button>
+                        </Link>
+                        <Link
+                          href="https://www.instagram.com/bolio.ui/"
+                          target="_blank"
+                        >
+                          <Button
+                            w="28px"
+                            h="28px"
+                            py={0}
+                            px={0}
+                            className="theme-button"
+                            aria-label="Instagram Bolio UI"
+                            type="abort"
+                          >
+                            <Instagram fontSize={16} />
+                          </Button>
+                        </Link>
                         <Button
                           w="28px"
                           h="28px"
                           py={0}
                           px={0}
+                          aria-label="Toggle Purple mode"
                           className="theme-button"
-                          aria-label="Github Bolio UI"
                           type="abort"
-                        >
-                          <Github fontSize={16} />
-                        </Button>
-                      </Link>
-                      <Link
-                        href="https://www.twitter.com/bolio_ui/"
-                        target="_blank"
-                      >
-                        <Button
-                          w="28px"
-                          h="28px"
-                          py={0}
-                          px={0}
-                          className="theme-button"
-                          aria-label="Twitter Bolio UI"
-                          type="abort"
-                        >
-                          <Twitter fontSize={16} />
-                        </Button>
-                      </Link>
-                      <Link
-                        href="https://www.instagram.com/bolio.ui/"
-                        target="_blank"
-                      >
-                        <Button
-                          w="28px"
-                          h="28px"
-                          py={0}
-                          px={0}
-                          className="theme-button"
-                          aria-label="Instagram Bolio UI"
-                          type="abort"
-                        >
-                          <Instagram fontSize={16} />
-                        </Button>
-                      </Link>
-                      <Button
-                        w="28px"
-                        h="28px"
-                        py={0}
-                        px={0}
-                        aria-label="Toggle Purple mode"
-                        className="theme-button"
-                        type="abort"
-                        onClick={() =>
-                          settings.switchTheme(
-                            theme.type === 'light' ? 'purple' : 'light'
-                          )
-                        }
-                      >
-                        {theme.type === 'light' ? (
-                          <Moon fontSize={16} />
-                        ) : (
-                          <Sun fontSize={16} />
-                        )}
-                      </Button>
-                      <Spacer w={1} />
-                      <Link
-                        href="https://www.patreon.com/brunnoandrade"
-                        target="_blank"
-                      >
-                        <Button
-                          icon={
-                            <Heart
-                              fill="red"
-                              stroke="red"
-                              height={12}
-                              width={12}
-                            />
+                          onClick={() =>
+                            settings.switchTheme(
+                              theme.type === 'light' ? 'purple' : 'light'
+                            )
                           }
-                          auto
-                          scale={0.75}
                         >
-                          Sponsor
+                          {theme.type === 'light' ? (
+                            <Moon fontSize={16} />
+                          ) : (
+                            <Sun fontSize={16} />
+                          )}
                         </Button>
-                      </Link>
-                    </>
-                  </div>
-                </Grid>
-              </>
-            </Grid.Container>
-          </Container>
-        </div>
+                        <Spacer w={1} />
+                        <Link
+                          href="https://www.patreon.com/brunnoandrade"
+                          target="_blank"
+                        >
+                          <Button
+                            icon={
+                              <Heart
+                                fill="red"
+                                stroke="red"
+                                height={12}
+                                width={12}
+                              />
+                            }
+                            auto
+                            scale={0.75}
+                            rounded
+                            type="secondary"
+                          >
+                            Sponsor
+                          </Button>
+                        </Link>
+                      </>
+                    </div>
+                  </Grid>
+                </>
+              </Grid.Container>
+            </Container>
+          </div>
+        </Container>
       </nav>
       <style jsx>{`
         .menu_wrapper {
@@ -171,7 +175,7 @@ const Navigation: React.FC = () => {
           top: 0;
           right: 0;
           left: 0;
-          box-shadow: ${theme.type === 'purple'
+          box-shadow: ${theme.type === 'dark'
             ? 'rgba(255, 255, 255, 0.1) 0 0 20px 0'
             : 'rgba(0, 0, 0, 0.1) 0 0 20px 0'};
           backdrop-filter: saturate(180%) blur(10px);
@@ -199,6 +203,11 @@ const Navigation: React.FC = () => {
         }
         .tabs :global(.content) {
           display: none;
+        }
+        @media only screen and (max-width: ${theme.breakpoints.md.max}) {
+          .tabs {
+            display: none;
+          }
         }
 
         .controls {
