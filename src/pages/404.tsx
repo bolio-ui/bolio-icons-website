@@ -2,26 +2,19 @@ import React from 'react'
 import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
-import { Section, Container, Grid, Text, Row, Col, Button } from 'core'
-import { Action, useRegisterActions } from 'kbar'
-import { getId } from 'core/utils/collections'
+import {
+  Section,
+  Container,
+  Grid,
+  Text,
+  Row,
+  Col,
+  Button
+} from '@bolio-ui/core'
 import Base from 'src/templates/Base'
 
 function Home() {
   const router = useRouter()
-
-  const homeAction: Action = React.useMemo(() => {
-    return {
-      id: getId(),
-      name: 'Getting Started',
-      section: 'Scope',
-      shortcut: [],
-      keywords: 'help, docs, go, started, getting started, bolio ui',
-      perform: () => router.push('/docs/guide/getting-started')
-    }
-  }, [router])
-
-  useRegisterActions([homeAction])
 
   return (
     <>
@@ -68,14 +61,14 @@ function Home() {
             <Grid.Container gap={2} justify="center" alignItems="center">
               <Grid xs={6} sm={6} md={2}>
                 <NextLink href={'/docs/guide/getting-started'} passHref>
-                  <Button type="info" width="100%">
+                  <Button type="secondary" rounded width="100%">
                     Get Started
                   </Button>
                 </NextLink>
               </Grid>
               <Grid xs={6} sm={6} md={3}>
                 <NextLink href={'/'} passHref>
-                  <Button type="default" width="100%">
+                  <Button rounded width="100%">
                     Go to homepage
                   </Button>
                 </NextLink>

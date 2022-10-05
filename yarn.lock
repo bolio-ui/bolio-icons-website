@@ -1096,7 +1096,7 @@
 "@bolio-ui/core@file:bolio-ui-core-1.0.0.tgz":
   version "1.0.0"
   resolved "file:bolio-ui-core-1.0.0.tgz"
-  integrity sha512-AxF+GND3qrAWu8KCFmT5VaopF5fhhhIGXrQBLP0dBZQtwrq9zPMOuBP8BjIIFEDNykdR0u21i+KCzpptPSTp0Q==
+  integrity sha512-FTrpTRUlqovkZZGBM0VtRBMWD9pr4x3FgHjBFRCHLq1JhkbnZ9277jROSQLxXiXrn7iOxl9TP2Gh0C65HfwmQw==
   dependencies:
     "@mapbox/rehype-prism" "^0.6.0"
     "@mdx-js/loader" "^1.6.22"
