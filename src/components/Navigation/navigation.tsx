@@ -75,7 +75,10 @@ const Navigation: React.FC = () => {
                             aria-label="Github Bolio UI"
                             type="abort"
                           >
-                            <Github fontSize={16} />
+                            <Github
+                              fontSize={16}
+                              color={theme.palette.foreground}
+                            />
                           </Button>
                         </Link>
                         <Link
@@ -91,7 +94,10 @@ const Navigation: React.FC = () => {
                             aria-label="Twitter Bolio UI"
                             type="abort"
                           >
-                            <Twitter fontSize={16} />
+                            <Twitter
+                              fontSize={16}
+                              color={theme.palette.foreground}
+                            />
                           </Button>
                         </Link>
                         <Link
@@ -107,7 +113,10 @@ const Navigation: React.FC = () => {
                             aria-label="Instagram Bolio UI"
                             type="abort"
                           >
-                            <Instagram fontSize={16} />
+                            <Instagram
+                              fontSize={16}
+                              color={theme.palette.foreground}
+                            />
                           </Button>
                         </Link>
                         <Button
@@ -125,9 +134,15 @@ const Navigation: React.FC = () => {
                           }
                         >
                           {theme.type === 'light' ? (
-                            <Moon fontSize={16} />
+                            <Moon
+                              fontSize={16}
+                              color={theme.palette.foreground}
+                            />
                           ) : (
-                            <Sun fontSize={16} />
+                            <Sun
+                              fontSize={16}
+                              color={theme.palette.foreground}
+                            />
                           )}
                         </Button>
                         <Spacer w={1} />
