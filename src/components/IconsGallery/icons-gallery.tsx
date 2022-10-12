@@ -20,6 +20,7 @@ const ImportSnippet: React.FC<React.PropsWithChildren<unknown>> = ({
       toastText="Code copied!"
       toastType="secondary"
       text={children.toString()}
+      rounded
     />
   )
 }

@@ -54,6 +54,7 @@ function SectionDemonstration() {
                   toastType="secondary"
                   text="yarn add @bolio-ui/core"
                   width="100%"
+                  rounded
                 />
               </Grid>
             </Grid.Container>
