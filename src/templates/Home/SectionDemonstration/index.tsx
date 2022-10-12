@@ -1,5 +1,4 @@
 import React from 'react'
-import NextLink from 'next/link'
 import {
   useTheme,
   Section,
@@ -39,11 +38,15 @@ function SectionDemonstration() {
             </Text>
             <Grid.Container gap={2} xs={12} alignItems="center">
               <Grid xs={12} sm={4}>
-                <NextLink href={'/docs/guide/getting-started'} passHref>
-                  <Button type="secondary-light" w="100%">
+                <Link
+                  href="https://bolio-ui.com/docs/guide/"
+                  target="_blank"
+                  width="100%"
+                >
+                  <Button type="secondary-light" width="100%" rounded>
                     Get Started
                   </Button>
-                </NextLink>
+                </Link>
               </Grid>
               <Grid xs={12} sm={8}>
                 <Snippet
@@ -57,7 +60,10 @@ function SectionDemonstration() {
           </Grid>
           <Grid xs={12} md={6}>
             <Grid xs={12} md={12} justify="center">
-              <Link href="/docs/components/text">
+              <Link
+                href="https://bolio-ui.com/docs/components/text/"
+                target="_blank"
+              >
                 <Card
                   style={{
                     background:
@@ -71,7 +77,10 @@ function SectionDemonstration() {
                 </Card>
               </Link>
               <Spacer width={2} />
-              <Link href="/docs/components/icons">
+              <Link
+                href="https://bolio-ui.com/docs/components/icons/"
+                target="_blank"
+              >
                 <Card
                   style={{
                     background:
@@ -85,7 +94,10 @@ function SectionDemonstration() {
                 </Card>
               </Link>
               <Spacer width={2} />
-              <Link href="/docs/components/button">
+              <Link
+                href="https://bolio-ui.com/docs/components/button/"
+                target="_blank"
+              >
                 <Card
                   style={{
                     background:
@@ -108,7 +120,9 @@ function SectionDemonstration() {
                 href="https://bolio-ui.com/docs/components/"
                 target="_blank"
               >
-                <Button type="secondary-light">Explore more components</Button>
+                <Button type="secondary-light" rounded>
+                  Explore more components
+                </Button>
               </Link>
             </Col>
           </Grid>

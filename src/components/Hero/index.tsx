@@ -52,21 +52,26 @@ function Hero({ content }: Props) {
         </Grid.Container>
         <Grid.Container gap={2} justify="center" alignItems="center">
           <Grid xs={12} sm={6} md={2}>
-            <Button type="secondary" rounded width="100%">
-              <Link
-                href="https://bolio-ui.com/docs/components/icons"
-                target="_blank"
-              >
+            <Link
+              href="https://bolio-ui.com/docs/components/icons/"
+              target="_blank"
+              width="100%"
+            >
+              <Button type="secondary-light" width="100%" rounded>
                 Get Started
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </Grid>
           <Grid xs={12} sm={6} md={3}>
-            <Button rounded width="100%">
-              <Link href="/download/bolio-ui-icons.zip" target="_blank">
+            <Link
+              href="/download/bolio-ui-icons.zip"
+              width="100%"
+              target="_blank"
+            >
+              <Button rounded width="100%">
                 Download Pack
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </Grid>
         </Grid.Container>
       </Container>

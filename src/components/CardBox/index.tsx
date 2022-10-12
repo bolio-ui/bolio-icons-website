@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Card, useTheme, Grid } from '@bolio-ui/core'
+import { Text, Card, useTheme, Row } from '@bolio-ui/core'
 import * as Icons from '@bolio-ui/icons'
 
 type Icon = keyof typeof Icons
@@ -15,7 +15,7 @@ export type ProjectCardProps = Props
 
 const renderIcon = (icon: Icon) => {
   const CurrentIcon = Icons[icon]
-  return <CurrentIcon height={18} width={18} color="#FFFFFF" /> || null
+  return <CurrentIcon height={18} width={18} /> || null
 }
 
 function CardBox({ title, description, icon, hover = false }: Props) {
@@ -24,21 +24,30 @@ function CardBox({ title, description, icon, hover = false }: Props) {
   return (
     <>
       <div className="card-wrapper">
-        <Card type="secondary" className={`${hover && 'card-box'}`} shadow>
-          <Grid>
+        <Card
+          className={`${hover && 'card-box'}`}
+          padding={1}
+          style={{
+            background: 'rgba(194, 95, 255, 0.2) none repeat scroll 0% 0%'
+          }}
+        >
+          <Row align="middle">
             {renderIcon(icon)}
-            <Text margin={0} h4 style={{ color: '#FFFFFF' }}>
+            <Text my={0} ml={0.8} h4>
               {title}
             </Text>
-          </Grid>
-          <Grid>
-            <Text margin={0} style={{ color: '#FFFFFF' }}>
+          </Row>
+          <Row>
+            <Text mb={0} style={{ color: theme.palette.accents_6 }}>
               {description}
             </Text>
-          </Grid>
+          </Row>
         </Card>
       </div>
       <style jsx>{`
+        .card-wrapper {
+          width: 100%;
+        }
         .card-wrapper :global(.card-box):hover {
           box-shadow: ${theme.type === 'purple'
             ? `0 0 0 1px ${theme.palette.foreground}`

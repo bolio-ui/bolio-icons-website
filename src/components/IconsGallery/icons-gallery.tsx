@@ -53,6 +53,7 @@ const IconsGallery: React.FC<unknown> = () => {
             placeholder="Search icon..."
             mb={2}
             height={1.5}
+            rounded
             {...bindings}
           />
         </Grid>
