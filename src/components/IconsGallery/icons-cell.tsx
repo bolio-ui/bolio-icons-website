@@ -41,12 +41,19 @@ const IconsCell: React.FC<Props> = ({
       >
         <Row
           justify="space-around"
-          style={{ textAlign: 'center', fontSize: 28, marginTop: 24 }}
+          style={{
+            textAlign: 'center',
+            fontSize: 28,
+            marginTop: 24,
+            color: '#FFFFFF'
+          }}
         >
           <Component />
         </Row>
         <Card.Content style={{ textAlign: 'center' }}>
-          <Text b>{name}</Text>
+          <Text b style={{ color: '#FFFFFF' }}>
+            {name}
+          </Text>
         </Card.Content>
       </Card>
       <style jsx>{`

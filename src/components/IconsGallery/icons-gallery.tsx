@@ -51,7 +51,7 @@ const IconsGallery: React.FC<unknown> = () => {
             width="100%"
             icon={<Icons.Search />}
             placeholder="Search icon..."
-            marginBottom={2}
+            mb={2}
             height={1.5}
             {...bindings}
           />

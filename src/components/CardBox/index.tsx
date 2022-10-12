@@ -15,7 +15,7 @@ export type ProjectCardProps = Props
 
 const renderIcon = (icon: Icon) => {
   const CurrentIcon = Icons[icon]
-  return <CurrentIcon height={18} width={18} /> || null
+  return <CurrentIcon height={18} width={18} color="#FFFFFF" /> || null
 }
 
 function CardBox({ title, description, icon, hover = false }: Props) {
@@ -24,15 +24,15 @@ function CardBox({ title, description, icon, hover = false }: Props) {
   return (
     <>
       <div className="card-wrapper">
-        <Card className={`${hover && 'card-box'}`} shadow>
+        <Card type="secondary" className={`${hover && 'card-box'}`} shadow>
           <Grid>
             {renderIcon(icon)}
-            <Text margin={0} h4>
+            <Text margin={0} h4 style={{ color: '#FFFFFF' }}>
               {title}
             </Text>
           </Grid>
           <Grid>
-            <Text margin={0} style={{ color: theme.palette.accents_6 }}>
+            <Text margin={0} style={{ color: '#FFFFFF' }}>
               {description}
             </Text>
           </Grid>
