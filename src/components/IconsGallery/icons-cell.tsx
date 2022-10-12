@@ -35,7 +35,7 @@ const IconsCell: React.FC<Props> = ({
         w="100%"
         type="secondary"
         style={{
-          margin: 15,
+          margin: 10,
           cursor: 'pointer'
         }}
       >
@@ -51,7 +51,7 @@ const IconsCell: React.FC<Props> = ({
           <Component />
         </Row>
         <Card.Content style={{ textAlign: 'center' }}>
-          <Text b style={{ color: '#FFFFFF' }}>
+          <Text b font="12px" style={{ color: '#FFFFFF' }}>
             {name}
           </Text>
         </Card.Content>
