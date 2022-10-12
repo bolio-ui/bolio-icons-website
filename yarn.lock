@@ -1122,10 +1122,10 @@
     remark-slug "^6.0.0"
     styled-components "^5.3.0"
 
-"@bolio-ui/icons@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.npmjs.org/@bolio-ui/icons/-/icons-1.0.3.tgz"
-  integrity sha512-3Ntgh7GA+LoWCRnSnlR1fFeqQaonUBprMudq1ErzSwwvQZhPGVXC5OHiMGfnzaL6KjFpTD6bfKEqHiJ5Dmbeuw==
+"@bolio-ui/icons@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@bolio-ui/icons/-/icons-1.0.4.tgz#2f23e0a25ceddbe7728f5a3dcfbbc39da21928ec"
+  integrity sha512-jhLyXsz7kRmAQJE3Aj8LnIROtf99Kd1Y43aS1MwmDRS/lsyNGLzGEghk7y9xA6Wv5wHxoQeCyfIWrwCNjE3VnA==
 
 "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
