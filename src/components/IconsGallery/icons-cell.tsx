@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Grid, Row, Text, useTheme } from '@bolio-ui/core'
+import { Card, Grid, Row, Text } from '@bolio-ui/core'
 
 export const getFileName = (name: string): string => {
   return name.replace(/^(.)/, (g) => g.toLowerCase())
@@ -26,7 +26,6 @@ const IconsCell: React.FC<Props> = ({
   name,
   onClick
 }) => {
-  const theme = useTheme()
   return (
     <Grid xs={6} sm={4} md={2}>
       <Card
@@ -34,20 +33,27 @@ const IconsCell: React.FC<Props> = ({
         onClick={() => onClick(name)}
         h="115px"
         w="100%"
+        type="secondary"
         style={{
           margin: 15,
-          cursor: 'pointer',
-          backgroundColor: theme.type === 'purple' ? '#331d4f' : '#f3dfff'
+          cursor: 'pointer'
         }}
       >
         <Row
           justify="space-around"
-          style={{ textAlign: 'center', fontSize: 28, marginTop: 24 }}
+          style={{
+            textAlign: 'center',
+            fontSize: 28,
+            marginTop: 24,
+            color: '#FFFFFF'
+          }}
         >
           <Component />
         </Row>
         <Card.Content style={{ textAlign: 'center' }}>
-          <Text b>{name}</Text>
+          <Text b style={{ color: '#FFFFFF' }}>
+            {name}
+          </Text>
         </Card.Content>
       </Card>
       <style jsx>{`

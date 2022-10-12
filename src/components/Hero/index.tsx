@@ -22,7 +22,27 @@ function Hero({ content }: Props) {
       <Container>
         <Grid.Container justify="center">
           <Row justify="space-around" style={{ textAlign: 'center' }}>
-            <Col span={8}>
+            <Col span={9}>
+              <svg
+                viewBox="0 0 500 500"
+                style={{
+                  color: '#c25fff',
+                  height: '6rem',
+                  width: '6rem',
+                  verticalAlign: 'middle',
+                  marginTop: '-16px',
+                  marginBottom: '-16px'
+                }}
+              >
+                <path
+                  d="M88.21,182.47c-.42-1.33,0,2.25,1.71,5.09,26.52,44.72,52.28,89.92,80.06,133.85C208.53,382.33,285.9,401,348.22,366c62.55-35.15,87-111.85,55.95-175.35-31.52-64.39-104.55-92.59-171.89-66C184.51,143.51,137,162.89,88.21,182.47Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M82.65,298.07c-1.06-.9,1.22,1.89,4.16,3.4,46.26,23.71,92.14,48.25,139.06,70.62,65.07,31,140.5,5.63,174.59-57.21,34.22-63.06,14.07-141-46.06-178.19C293.44,99,216.61,114,173.78,172.39,143.4,213.8,113.47,255.54,82.65,298.07Z"
+                  fill="currentColor"
+                />
+              </svg>
               <Text h1>{content.title}</Text>
               <Text p font={1.5} mt={0}>
                 {content.description}
@@ -32,9 +52,9 @@ function Hero({ content }: Props) {
         </Grid.Container>
         <Grid.Container gap={2} justify="center" alignItems="center">
           <Grid xs={12} sm={6} md={2}>
-            <Button type="secondary" width="100%">
+            <Button type="secondary" rounded width="100%">
               <Link
-                href="https://bolio-ui.com/docs/guide/getting-started"
+                href="https://bolio-ui.com/docs/components/icons"
                 target="_blank"
               >
                 Get Started
@@ -42,7 +62,7 @@ function Hero({ content }: Props) {
             </Button>
           </Grid>
           <Grid xs={12} sm={6} md={3}>
-            <Button type="primary" width="100%">
+            <Button rounded width="100%">
               <Link href="/download/bolio-ui-icons.zip" target="_blank">
                 Download Pack
               </Link>

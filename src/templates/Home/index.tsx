@@ -3,6 +3,8 @@ import { Section, Container } from '@bolio-ui/core'
 import Base from 'src/templates/Base'
 import Hero from 'src/components/Hero'
 import IconsGallery from 'src/components/IconsGallery'
+import SectionDemonstration from './SectionDemonstration'
+import SectionCommunity from './SectionCommunity'
 
 function Home() {
   return (
@@ -11,7 +13,7 @@ function Home() {
         content={{
           title: 'Bolio Icons',
           description:
-            'Collection of simply beautiful icons. Each icon is designed with an emphasis on simplicity, consistency and readability.'
+            'Collection of simply beautiful icons. Each icon is designed with an emphasis on simplicity, consistency and readability. 🥷🏼'
         }}
       />
       <Section pb={4}>
@@ -19,6 +21,8 @@ function Home() {
           <IconsGallery />
         </Container>
       </Section>
+      <SectionDemonstration />
+      <SectionCommunity />
     </Base>
   )
 }

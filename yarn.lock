@@ -1093,10 +1093,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@bolio-ui/core@file:bolio-ui-core-1.0.0.tgz":
+"@bolio-ui/core@^1.0.0":
   version "1.0.0"
-  resolved "file:bolio-ui-core-1.0.0.tgz"
-  integrity sha512-AxF+GND3qrAWu8KCFmT5VaopF5fhhhIGXrQBLP0dBZQtwrq9zPMOuBP8BjIIFEDNykdR0u21i+KCzpptPSTp0Q==
+  resolved "https://registry.yarnpkg.com/@bolio-ui/core/-/core-1.0.0.tgz#521379ec328ac0c981069c165688093a582a2dbe"
+  integrity sha512-aDKxpIDw8BClBxRJQntPFwbx1P1mHTyVYC9FK3EyHUGx3ydZafmLnl3wi0zPUrUvcNbEGVWkBlQObh8Kozu5OA==
   dependencies:
     "@mapbox/rehype-prism" "^0.6.0"
     "@mdx-js/loader" "^1.6.22"
