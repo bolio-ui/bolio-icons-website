@@ -9,7 +9,8 @@ import {
   Text,
   Row,
   Col,
-  Button
+  Button,
+  Link
 } from '@bolio-ui/core'
 import Base from 'src/templates/Base'
 
@@ -60,14 +61,18 @@ function Home() {
             </Grid.Container>
             <Grid.Container gap={2} justify="center" alignItems="center">
               <Grid xs={6} sm={6} md={2}>
-                <NextLink href={'/docs/guide/getting-started'} passHref>
+                <Link
+                  href="https://bolio-ui.com/docs/components/icons"
+                  target="_blank"
+                  width="100%"
+                >
                   <Button type="secondary" rounded width="100%">
                     Get Started
                   </Button>
-                </NextLink>
+                </Link>
               </Grid>
               <Grid xs={6} sm={6} md={3}>
-                <NextLink href={'/'} passHref>
+                <NextLink href="/">
                   <Button rounded width="100%">
                     Go to homepage
                   </Button>
