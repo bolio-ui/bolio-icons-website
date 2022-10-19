@@ -8,7 +8,7 @@ export type BaseTemplateProps = {
 
 function Base({ children }: BaseTemplateProps) {
   return (
-    <Page style={{ zIndex: 1 }}>
+    <Page>
       <Page.Content>{children}</Page.Content>
       <Page.Footer>
         <Footer />

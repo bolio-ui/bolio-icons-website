@@ -9,7 +9,7 @@ import {
   useTheme,
   useBodyScroll
 } from '@bolio-ui/core'
-import { Sun, Moon, Heart, Github, Instagram, Twitter } from '@bolio-ui/icons'
+import { Sun, Moon, Github, Instagram, Twitter } from '@bolio-ui/icons'
 import { useSettings } from 'src/context/SettingsContext'
 import Logo from 'src/components/Logo'
 
@@ -137,25 +137,9 @@ const Navigation: React.FC = () => {
                       )}
                     </Button>
                     <Spacer w={1} />
-                    <Link
-                      href="https://www.patreon.com/brunnoandrade"
-                      target="_blank"
-                    >
-                      <Button
-                        icon={
-                          <Heart
-                            fill="red"
-                            stroke="red"
-                            height={12}
-                            width={12}
-                          />
-                        }
-                        auto
-                        scale={0.75}
-                        rounded
-                        type="secondary"
-                      >
-                        Sponsor
+                    <Link href="https://bolio-ui.com/" target="_blank">
+                      <Button auto scale={0.75} rounded type="secondary">
+                        Bolio UI 🥷🏼
                       </Button>
                     </Link>
                   </>
