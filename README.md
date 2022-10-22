@@ -1,3 +1,22 @@
+<p align="center">
+  <a href="https://github.com/bolio-ui/bolio-icons-website">
+    <img src="https://bolio-ui.com/logo-colored.svg" alt="Bolio UI Logo" width="100" />
+  </a>
+</p>
+
+<h1 align="center">Bolio Icons 🥷🏼</h1>
+
+<p align="center">
+  <img alt="MIT License" src="https://img.shields.io/github/license/bolio-ui/bolio-icons-website"/>
+  <img alt="Github Stars" src="https://badgen.net/github/stars/bolio-ui/bolio-icons-website" />
+</p>
+
+## About
+
+Bolio Icons is an open source application that allows developers to use icons for their projects in an easier and more practical way.
+
+This project was developed by Bolio UI. Visit [https://bolio-ui.com/docs/guide](https://bolio-ui.com/docs/guide) to start using this amazing UI library.
+
 ## Quick Start
 
 1. Installation: Inside your project directory, install Bolio Icons by running either of the following:
@@ -21,7 +40,7 @@ const App = () => {
 export default App
 ```
 
-## Custom Style Example
+## Example
 
 ```jsx
 import React from 'react'
