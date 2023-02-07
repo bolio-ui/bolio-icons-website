@@ -7,13 +7,14 @@
 <h1 align="center">Bolio Icons 🥷🏼</h1>
 
 <p align="center">
-  <img alt="MIT License" src="https://img.shields.io/github/license/bolio-ui/bolio-icons-website"/>
-  <img alt="Github Stars" src="https://badgen.net/github/stars/bolio-ui/bolio-icons-website" />
+  <a href="https://github.com/bolio-ui/bolio-icons-website/blob/master/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/bolio-ui/bolio-icons-website" />
+  </a>
 </p>
 
 ## About
 
-Bolio Icons is an open source application that allows developers to use icons for their projects in an easier and more practical way.
+[Bolio Icons](https://icons.bolio-ui.com/) is an open source application that allows developers to use icons for their projects in an easier and more practical way.
 
 This project was developed by Bolio UI. Visit [https://bolio-ui.com/docs/guide](https://bolio-ui.com/docs/guide) to start using this amazing UI library.
 
