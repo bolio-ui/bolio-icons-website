@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import dynamic from 'next/dynamic'
 import Loading from './loading'
 
