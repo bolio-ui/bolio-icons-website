@@ -1,0 +1,6 @@
+[build]
+  command = "yarn build"
+  publish = "_static"
+
+[build.environment]
+  NODE_VERSION = "20"
