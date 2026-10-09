@@ -1,4 +1,6 @@
 import React from 'react'
+import iconsPackage from '@bolio-ui/icons/package.json'
+import { allIcons } from 'src/lib/icons'
 import {
   Text,
   Container,
@@ -46,6 +48,9 @@ function Hero({ content }: Props) {
               <Text h1>{content.title}</Text>
               <Text p font={1.5} mt={0}>
                 {content.description}
+              </Text>
+              <Text small my={0} type="secondary">
+                v{iconsPackage.version} · {allIcons.length} icons · MIT license
               </Text>
             </Col>
           </Row>

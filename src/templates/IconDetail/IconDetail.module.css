@@ -1,0 +1,134 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 24px;
+  color: var(--detail-muted);
+  font-size: 0.875rem;
+}
+
+.back:hover {
+  color: var(--detail-foreground);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-bottom: 8px;
+}
+
+.category {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 12px;
+  border: 1px solid var(--detail-border);
+  border-radius: 13px;
+  color: var(--detail-muted);
+  font-size: 0.8125rem;
+}
+
+.category:hover {
+  color: var(--detail-foreground);
+  border-color: var(--detail-hover-border);
+}
+
+.keywords {
+  margin: 0 0 32px;
+  color: var(--detail-muted);
+  font-size: 0.9375rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  border: 1px solid var(--detail-border);
+  border-radius: var(--detail-radius);
+  background-color: var(--detail-bg);
+  background-clip: padding-box;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: var(--detail-muted);
+  font-family: var(--detail-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.related {
+  margin-top: 64px;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.relatedItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 8px;
+  border: 1px solid var(--detail-border);
+  border-radius: var(--detail-radius);
+  background-color: var(--detail-bg);
+  color: var(--detail-foreground);
+  font-size: 0.75rem;
+  background-clip: padding-box;
+  transition: border-color 150ms ease;
+}
+
+.relatedItem:hover {
+  border-color: var(--detail-hover-border);
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .preview {
+    min-height: 220px;
+  }
+}
+
+/* long import lines scroll inside the snippet instead of being clipped */
+.section :global(pre) {
+  overflow-x: auto;
+}

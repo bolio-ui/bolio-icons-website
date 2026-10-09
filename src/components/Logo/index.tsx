@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Text, useTheme } from '@bolio-ui/core'
+import { Link, Text } from '@bolio-ui/core'
 
 interface Props {
   name: string
@@ -8,8 +8,6 @@ interface Props {
 export type HeroProps = Props
 
 function Logo({ name }: Props) {
-  const theme = useTheme()
-
   return (
     <Link href="/">
       <Text b>
@@ -38,11 +36,6 @@ function Logo({ name }: Props) {
         .container {
           padding-left: 1px;
           display: inline-flex;
-        }
-        @media only screen and (max-width: ${theme.breakpoints.xs.max}) {
-          .container {
-            display: none;
-          }
         }
       `}</style>
     </Link>

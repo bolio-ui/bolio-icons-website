@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, Grid, Link, useTheme } from '@bolio-ui/core'
 import { Heart } from '@bolio-ui/icons'
+import iconsPackage from '@bolio-ui/icons/package.json'
 import styles from './FooterMeta.module.css'
 
 function FooterMeta() {
@@ -9,7 +10,7 @@ function FooterMeta() {
 
   return (
     <Grid.Container alignItems="center">
-      <Grid xs={12} md={6}>
+      <Grid xs={12} md={4}>
         <Text
           font={0.75}
           my={0}
@@ -21,7 +22,21 @@ function FooterMeta() {
           © {year} Bolio Icons
         </Text>
       </Grid>
-      <Grid xs={12} md={6} className={styles.right}>
+      <Grid xs={12} md={4} className={styles.center}>
+        <Link
+          href="https://github.com/bolio-ui/bolio-icons/releases"
+          target="_blank"
+          rel="noopener"
+          style={{
+            fontFamily: theme.font.mono,
+            fontSize: '0.75rem',
+            color: theme.palette.accents_5
+          }}
+        >
+          v{iconsPackage.version} · changelog
+        </Link>
+      </Grid>
+      <Grid xs={12} md={4} className={styles.right}>
         <Text
           font={0.75}
           b

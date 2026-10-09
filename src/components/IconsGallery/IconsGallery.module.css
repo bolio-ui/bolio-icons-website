@@ -10,9 +10,44 @@
   background-color: var(--gallery-bg);
 }
 
-.search {
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   width: 100%;
-  max-width: 600px;
+  max-width: 720px;
+}
+
+.search {
+  flex: 1;
+  min-width: 0;
+}
+
+.customize {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dot {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--gallery-foreground);
+  box-shadow: 0 0 0 2px var(--gallery-bg);
+}
+
+@media (max-width: 600px) {
+  .customizeLabel {
+    display: none;
+  }
+
+  .customize {
+    min-width: 0 !important;
+    padding: 0 14px !important;
+  }
 }
 
 /* Carousel of categories: a single scrollable row, so the sticky toolbar
@@ -167,6 +202,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
+  flex-wrap: wrap;
   min-height: 20px;
   margin: 8px 0 16px;
   color: var(--gallery-muted);
@@ -207,5 +243,232 @@
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
     gap: 8px;
+  }
+}
+
+/* Tiles */
+.cell {
+  position: relative;
+  border-radius: var(--gallery-radius);
+}
+
+.cell[data-selected] {
+  border-radius: var(--gallery-radius);
+  box-shadow:
+    0 0 0 2px var(--gallery-bg),
+    0 0 0 4px var(--gallery-accent);
+}
+
+.tileCard {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100px;
+  border: 1px solid var(--gallery-border);
+  border-radius: var(--gallery-radius);
+  background-color: var(--gallery-surface);
+  background-clip: padding-box;
+  cursor: pointer;
+  transition: border-color 150ms ease;
+}
+
+.tileCard:hover {
+  border-color: var(--gallery-accent);
+}
+
+.tileCard:focus-visible {
+  outline: 2px solid var(--gallery-accent);
+  outline-offset: 2px;
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.tileIcon {
+  display: flex;
+}
+
+.actions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  left: 6px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  opacity: 0.55;
+  transition: opacity 150ms ease;
+}
+
+.cell:hover .actions,
+.cell:focus-within .actions {
+  opacity: 1;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background-color: var(--gallery-border);
+  color: var(--gallery-muted);
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.action:hover {
+  color: var(--gallery-foreground);
+}
+
+.action:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 1px;
+}
+
+.badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--gallery-accent);
+  color: var(--gallery-accent-text);
+  pointer-events: none;
+}
+
+/* Meta row and its controls */
+.metaActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px 16px;
+}
+
+.toggle {
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--gallery-border);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--gallery-muted);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  color: var(--gallery-foreground);
+  border-color: var(--gallery-hover-border);
+}
+
+.toggle[aria-pressed='true'],
+.toggle[aria-expanded='true'] {
+  border-color: var(--gallery-foreground);
+  color: var(--gallery-foreground);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--gallery-accent);
+  outline-offset: 2px;
+}
+
+.formatLabel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.panelWrap {
+  margin-bottom: 16px;
+}
+
+/* Floating bar while icons are selected */
+.selectionBar {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1200;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 12px;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 0 auto;
+  padding: 10px 14px;
+  border: 1px solid var(--gallery-border);
+  border-radius: 14px;
+  background-color: var(--gallery-bg);
+  box-shadow: 0 8px 30px rgb(0 0 0 / 25%);
+  font-size: 0.875rem;
+}
+
+.selectionCount {
+  color: var(--gallery-foreground);
+  font-weight: 500;
+}
+
+/* Says what a click on an icon copies, with a live example */
+.copyHint {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin: -8px 0 16px;
+  color: var(--gallery-muted);
+  font-size: 0.8125rem;
+}
+
+.copySample {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 2px 8px;
+  border: 1px solid var(--gallery-border);
+  border-radius: 6px;
+  color: var(--gallery-foreground);
+  font-size: 0.75rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* the global code style adds quotes around inline code */
+.copySample::before,
+.copySample::after {
+  content: none;
+}
+
+.copyLegend {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.copyLegend svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .copyLegend {
+    margin-left: 0;
   }
 }

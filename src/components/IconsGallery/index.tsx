@@ -1,9 +1,5 @@
-import dynamic from 'next/dynamic'
-import LoadingIconsGallery from './loading'
+import IconsGallery from './icons-gallery'
 
-const IconsGallery = dynamic(() => import('./icons-gallery'), {
-  ssr: false,
-  loading: () => <LoadingIconsGallery />
-})
-
+// Rendered on the server on purpose: the first icons, and their links to the
+// icon pages, are in the HTML that search engines read.
 export default IconsGallery

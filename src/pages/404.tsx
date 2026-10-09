@@ -1,7 +1,6 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { NextSeo } from 'next-seo'
-import { useRouter } from 'next/router'
 import {
   Section,
   Container,
@@ -15,32 +14,13 @@ import {
 import Base from 'src/templates/Base'
 
 function Home() {
-  const router = useRouter()
-
   return (
     <>
       <NextSeo
-        title={
-          '404: Page not found | Bolio UI - Amazing, modern and creative tools for React UI'
-        }
-        description={
-          'Make your development more amazing, modern and creative with tools for React.'
-        }
-        openGraph={{
-          url: `${router.pathname}`,
-          title:
-            '404: Page not found | Bolio UI - Amazing, modern and creative tools for React UI',
-          description:
-            'Make your development more amazing, modern and creative with tools for React.',
-          images: [
-            {
-              url: '/img/cover.png',
-              width: 1200,
-              height: 630,
-              alt: '404: Not | Bolio UI - Amazing, modern and creative tools for React UI'
-            }
-          ]
-        }}
+        title="Page not found"
+        description="The page you are looking for might have been removed, had its name changed or is temporarily unavailable."
+        noindex
+        nofollow
       />
       <Base>
         <Section py={4}>

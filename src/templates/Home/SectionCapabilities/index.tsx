@@ -11,6 +11,7 @@ import {
   Download
 } from '@bolio-ui/icons'
 import Eyebrow from 'src/components/Eyebrow'
+import PackageManagerTabs from 'src/components/PackageManagerTabs'
 import styles from './SectionCapabilities.module.css'
 
 const sampleIcons = [
@@ -151,11 +152,7 @@ function SectionCapabilities() {
                   <span>@bolio-ui/icons</span>
                 </div>
                 <div className={styles.codeBody}>
-                  <pre className={styles.code}>
-                    <span className={styles.mutedText}>
-                      yarn add @bolio-ui/icons
-                    </span>
-                  </pre>
+                  <PackageManagerTabs />
                   <pre className={styles.code}>
                     <span style={{ color: theme.palette.secondary }}>
                       {"import { Heart } from '@bolio-ui/icons'"}

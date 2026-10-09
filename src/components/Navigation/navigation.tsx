@@ -51,7 +51,13 @@ const Navigation: React.FC = () => {
                     <ThemeModeSelect />
                     <AccentSelect />
                     <Link href="https://bolio-ui.com/" target="_blank">
-                      <Button auto scale={0.75} rounded type="secondary">
+                      <Button
+                        auto
+                        scale={0.75}
+                        rounded
+                        type="secondary"
+                        className="brand-button"
+                      >
                         Bolio UI 🥷🏼
                       </Button>
                     </Link>
@@ -103,6 +109,28 @@ const Navigation: React.FC = () => {
         @media only screen and (max-width: ${theme.breakpoints.md.max}) {
           .tabs {
             display: none;
+          }
+        }
+
+        /* On phones the name of the logo stays, so the accent button keeps
+           only its icon to leave room for it */
+        @media only screen and (max-width: 600px) {
+          .controls :global(.accent-label) {
+            display: none;
+          }
+          .controls :global(.accent-button) {
+            min-width: 0 !important;
+            padding: 0 10px !important;
+          }
+        }
+
+        @media only screen and (max-width: 400px) {
+          .controls {
+            gap: 4px;
+          }
+          .controls :global(.brand-button) {
+            min-width: 0 !important;
+            padding: 0 8px !important;
           }
         }
 
