@@ -25,3 +25,4 @@ export const ORGANIZATION = {
 
 export const LICENSE_URL = 'https://opensource.org/licenses/MIT'
 export const iconSvgUrl = (slug: string) => `${SITE_URL}/svg/${slug}.svg`
+export const iconOgImageUrl = (slug: string) => `${SITE_URL}/og/${slug}.png`

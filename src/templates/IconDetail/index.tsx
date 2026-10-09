@@ -28,7 +28,7 @@ import {
 } from 'src/lib/icons'
 import JsonLd from 'src/components/JsonLd'
 import { iconJsonLd } from 'src/lib/jsonld'
-import { iconSvgUrl, SITE_NAME, SITE_URL } from 'src/lib/site'
+import { iconOgImageUrl, iconSvgUrl, SITE_NAME, SITE_URL } from 'src/lib/site'
 import styles from './IconDetail.module.css'
 
 const PREVIEW_SCALE = 3
@@ -85,7 +85,19 @@ const IconDetail: React.FC<{ icon: IconEntry }> = ({ icon }) => {
         title={title}
         description={description}
         canonical={url}
-        openGraph={{ url, title: `${title} | ${SITE_NAME}`, description }}
+        openGraph={{
+          url,
+          title: `${title} | ${SITE_NAME}`,
+          description,
+          images: [
+            {
+              url: iconOgImageUrl(icon.slug),
+              width: 1200,
+              height: 630,
+              alt: `${icon.name} icon`
+            }
+          ]
+        }}
       />
       <JsonLd
         data={iconJsonLd({
