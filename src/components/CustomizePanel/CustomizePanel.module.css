@@ -1,0 +1,140 @@
+.panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px 24px;
+  padding: 16px 20px 20px;
+  border: 1px solid var(--panel-border);
+  border-radius: var(--panel-radius);
+  background-color: var(--panel-bg);
+  background-clip: padding-box;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--panel-muted);
+}
+
+.value {
+  font-family: var(--panel-mono);
+  color: var(--panel-foreground);
+}
+
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.swatch {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.swatch[aria-pressed='true'] {
+  box-shadow:
+    0 0 0 2px var(--panel-bg),
+    0 0 0 4px var(--panel-foreground);
+}
+
+.swatch:focus-visible,
+.auto:focus-visible,
+.reset:focus-visible {
+  outline: 2px solid var(--panel-accent);
+  outline-offset: 2px;
+}
+
+.auto {
+  height: 24px;
+  padding: 0 10px;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--panel-muted);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.auto[aria-pressed='true'] {
+  border-color: var(--panel-foreground);
+  color: var(--panel-foreground);
+}
+
+.picker {
+  width: 28px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--panel-border);
+}
+
+.title {
+  color: var(--panel-foreground);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.reset {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--panel-border);
+  border-radius: 14px;
+  background: transparent;
+  color: var(--panel-foreground);
+  font: inherit;
+  font-size: 0.8125rem;
+  cursor: pointer;
+  transition:
+    border-color 150ms ease,
+    opacity 150ms ease;
+}
+
+.reset:hover:not(:disabled) {
+  border-color: var(--panel-accent);
+}
+
+.reset:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 700px) {
+  .panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+/* The slider thumb is always painted with the primary color, whatever the
+   Slider's type is, so it is aligned with its track here */
+.panel :global([class*='SliderDot-module_dot']) {
+  background-color: var(--panel-accent) !important;
+  color: var(--gallery-accent-text, #fff) !important;
+}

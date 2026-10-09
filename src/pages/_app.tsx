@@ -12,6 +12,7 @@ import {
   ThemePreference,
   ThemeType
 } from 'src/context/SettingsContext'
+import { IconSettingsProvider } from 'src/context/IconSettings'
 import Favicon from 'src/components/Favicon'
 import Navigation from 'src/components/Navigation'
 import SEO from '../../next-seo.config'
@@ -78,13 +79,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>
-          Bolio Icons - Simplicity, consistency and readability icons
-        </title>
-        <meta
-          name="description"
-          content="Bolio Icons is a collection of simply beautiful icons. Each icon is designed with an emphasis on simplicity, consistency and readability."
-        />
         <Favicon />
       </Head>
       <BolioUIProvider
@@ -102,8 +96,10 @@ function App({ Component, pageProps }: AppProps) {
         >
           <DefaultSeo {...SEO} />
           <CssBaseline />
-          <Navigation />
-          <Component {...pageProps} />
+          <IconSettingsProvider>
+            <Navigation />
+            <Component {...pageProps} />
+          </IconSettingsProvider>
         </SettingsContext.Provider>
       </BolioUIProvider>
     </>

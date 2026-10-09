@@ -1,66 +1,99 @@
 import React from 'react'
-import { Card, Text, useTheme } from '@bolio-ui/core'
-import { getContrastColor } from './contrast'
-
-export const getFileName = (name: string): string => {
-  return name.replace(/^(.)/, (g) => g.toLowerCase())
-}
-
-export const getImportString = (name: string) => {
-  const fileName = getFileName(name)
-  const single = `import ${name} from '@bolio-ui/icons/${fileName}'`
-  const normal = `import { ${name} } from '@bolio-ui/icons'`
-  return {
-    single,
-    normal
-  }
-}
+import NextLink from 'next/link'
+import { Text, useTheme } from '@bolio-ui/core'
+import { ArrowUpRight, Check, Star } from '@bolio-ui/icons'
+import { IconEntry, IconStyle } from 'src/lib/icons'
+import styles from './IconsGallery.module.css'
 
 interface Props {
-  component: React.ComponentType<unknown>
-  name: string
-  onClick: (name: string) => void
+  icon: IconEntry
+  style: IconStyle
+  selecting: boolean
+  selected: boolean
+  favorite: boolean
+  copyFormat: string
+  onActivate: (icon: IconEntry) => void
+  onToggleFavorite: (name: string) => void
 }
 
 const IconsCell: React.FC<Props> = ({
-  component: Component,
-  name,
-  onClick
+  icon,
+  style,
+  selecting,
+  selected,
+  favorite,
+  copyFormat,
+  onActivate,
+  onToggleFavorite
 }) => {
   const theme = useTheme()
-  const color = getContrastColor(theme.palette.secondary)
+  // Without a chosen color the icon and its name follow the theme's text
+  const color = style.color ?? theme.palette.foreground
+  const Component = icon.component
 
   return (
-    <Card
-      key={name}
-      onClick={() => onClick(name)}
-      h="100px"
-      w="100%"
-      type="secondary"
-      style={{ cursor: 'pointer' }}
-    >
-      <Card.Content
-        style={{
-          height: '100%',
-          boxSizing: 'border-box',
-          padding: 0,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: 12,
-          textAlign: 'center',
-          color
+    <div className={styles.cell} data-selected={selected || undefined}>
+      <div
+        className={styles.tileCard}
+        role="button"
+        tabIndex={0}
+        data-icon-cell
+        aria-label={`${selecting ? 'Select' : 'Copy'} ${icon.name}`}
+        aria-pressed={selecting ? selected : undefined}
+        title={
+          selecting
+            ? `Select ${icon.name}`
+            : `Copy ${icon.name} as ${copyFormat.toUpperCase()}`
+        }
+        onClick={() => onActivate(icon)}
+        onKeyDown={(event: React.KeyboardEvent) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault()
+            onActivate(icon)
+          }
         }}
       >
-        <span style={{ display: 'flex', fontSize: 28 }}>
-          <Component />
-        </span>
-        <Text b font="12px" style={{ color }}>
-          {name}
-        </Text>
-      </Card.Content>
-    </Card>
+        <div className={styles.tile} style={{ color }}>
+          <span className={styles.tileIcon} style={{ fontSize: style.size }}>
+            <Component strokeWidth={style.strokeWidth} aria-hidden />
+          </span>
+          <Text b font="12px" style={{ color }}>
+            {icon.name}
+          </Text>
+        </div>
+      </div>
+
+      {selecting ? (
+        selected && (
+          <span className={styles.badge}>
+            <Check fontSize={14} />
+          </span>
+        )
+      ) : (
+        <div className={styles.actions}>
+          <button
+            type="button"
+            className={styles.action}
+            aria-label={`${favorite ? 'Remove' : 'Add'} ${icon.name} ${
+              favorite ? 'from' : 'to'
+            } favorites`}
+            aria-pressed={favorite}
+            title={`${favorite ? 'Remove from' : 'Add to'} favorites`}
+            onClick={() => onToggleFavorite(icon.name)}
+          >
+            <Star fontSize={14} fill={favorite ? 'currentColor' : 'none'} />
+          </button>
+          <NextLink
+            href={`/icons/${icon.slug}`}
+            className={styles.action}
+            aria-label={`Open the ${icon.name} page`}
+            title={`Open the ${icon.name} page`}
+          >
+            <ArrowUpRight fontSize={14} />
+          </NextLink>
+        </div>
+      )}
+    </div>
   )
 }
 

@@ -49,9 +49,10 @@ const AccentSelect: React.FC = () => {
         rounded
         subtle
         icon={<Droplet />}
+        className="accent-button"
         aria-label="Change theme color"
       >
-        Theme
+        <span className="accent-label">Theme</span>
       </Button>
     </Popover>
   )
