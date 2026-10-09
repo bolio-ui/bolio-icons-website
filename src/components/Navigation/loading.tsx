@@ -1,17 +1,8 @@
 import React from 'react'
+import styles from './Loading.module.css'
 
 const LoadingNavigation: React.FC<unknown> = () => {
-  return (
-    <div className="loading-navigation">
-      <style jsx>{`
-        .loading-navigation {
-          height: 60px;
-          position: relative;
-          overflow: hidden;
-        }
-      `}</style>
-    </div>
-  )
+  return <div className={styles.loading} />
 }
 
 export default LoadingNavigation

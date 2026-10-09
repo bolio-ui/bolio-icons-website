@@ -17,7 +17,7 @@
     "re-build": "rm -rf .next _static node_modules && yarn install && yarn build"
   },
   "dependencies": {
-    "@bolio-ui/core": "^3.0.2",
+    "@bolio-ui/core": "^3.0.3",
     "@bolio-ui/icons": "^1.0.4",
     "next": "^15.5.27",
     "next-pwa": "^5.6.0",

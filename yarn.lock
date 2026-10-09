@@ -888,10 +888,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@bolio-ui/core@^3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@bolio-ui/core/-/core-3.0.2.tgz#17392186944d53de423821800ef58f204aead414"
-  integrity sha512-gZn7AkBjGMVDnAlT9CoTNGkuU56mSr+stE5jUd5Eu7frAQorewjSnoyRCfVQyLFUCfGM/CgPf2TGXkbj+F2ooA==
+"@bolio-ui/core@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@bolio-ui/core/-/core-3.0.3.tgz#54d5b8b33dfaafbec2b010b63f6d4a3d7ec7953e"
+  integrity sha512-vnGii42zDlQEw3D5T5ubgBuaG5aZCGiiWBPN+7TeJNFIT1Ca0C2U8fUkLcuWldPbt3qk8L+mi+jN4Gd03URHtw==
 
 "@bolio-ui/icons@^1.0.4":
   version "1.0.4"
