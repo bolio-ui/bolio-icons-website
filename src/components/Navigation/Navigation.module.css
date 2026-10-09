@@ -1,0 +1,66 @@
+.wrapper {
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.sticky {
+  position: fixed;
+  z-index: 1100;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.wrapper :global(.theme-button) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  height: 50px;
+}
+
+/* On phones the name of the logo stays, so the accent button keeps
+   only its icon to leave room for it */
+@media only screen and (max-width: 600px) {
+  .controls :global(.accent-label) {
+    display: none;
+  }
+  /* a circle like the color mode button: the empty text slot and the
+     gap that goes with it would leave blank space beside the icon */
+  .controls :global(.accent-button) {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    justify-content: center;
+  }
+  .controls :global(.accent-button > div) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .controls {
+    gap: 4px;
+  }
+  .controls :global(.brand-button) {
+    min-width: 0 !important;
+    padding: 0 8px !important;
+  }
+}

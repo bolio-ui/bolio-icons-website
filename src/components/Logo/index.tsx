@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, Text } from '@bolio-ui/core'
+import styles from './Logo.module.css'
 
 interface Props {
   name: string
@@ -30,14 +31,8 @@ function Logo({ name }: Props) {
             fill="currentColor"
           />
         </svg>
-        <div className="container">{name}</div>
+        <div className={styles.name}>{name}</div>
       </Text>
-      <style jsx>{`
-        .container {
-          padding-left: 1px;
-          display: inline-flex;
-        }
-      `}</style>
     </Link>
   )
 }
